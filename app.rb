@@ -49,7 +49,7 @@ class App
   end
 
   def db_path
-    File.join("db", app_id + ".db")
+    File.join("db", app_id + ".yml")
   end
 
 end
