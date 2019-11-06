@@ -20,7 +20,7 @@ def app_id_valid?
 end
 ```
 
-**Warning: ** Having `app_id_valid?` return true for arbitrary user input introduces a security vulnerability. See `db_path` to understand why. 
+**Warning:** Having `app_id_valid?` return true for arbitrary user input introduces a security vulnerability. See `db_path` to understand why. 
 
 ## Recording hits
 
