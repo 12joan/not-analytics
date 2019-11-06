@@ -7,12 +7,12 @@ class App
   def call(env)
     @request = Rack::Request.new(env)
 
-    _get = get
-
-    if _get.nil?
-      [ 500, {}, [ "" ] ]
-    else
-      [ 200, {}, [ _get ] ]
+    begin
+      [ 200, {}, [ get ] ]
+    rescue StandardError => e
+      puts "Runtime error: #{e}"
+      puts e.backtrace.join("\n\t")
+      [ 500, {}, [ "500 error occurred" ] ]
     end
   end
 
