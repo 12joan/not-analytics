@@ -1,4 +1,5 @@
-require 'yaml/store'
+require "yaml/store"
+require "active_support/security_utils"
 
 class App
 
@@ -41,7 +42,11 @@ class App
   end
 
   def app_id_valid?
-    { "14b6a51577c125505e0524226783c895" => true }.fetch(app_id, false)
+    whitelisted_ids.any? { |x| ActiveSupport::SecurityUtils.secure_compare(x, app_id) }
+  end
+
+  def whitelisted_ids
+    File.readlines(app_id_whitelist_path).map(&:strip).select { |x| x.length > 0 }
   end
 
   def set_log_db
@@ -50,6 +55,10 @@ class App
 
   def db_path
     File.join("db", app_id + ".yml")
+  end
+
+  def app_id_whitelist_path
+    File.join("conf", "apps")
   end
 
 end
