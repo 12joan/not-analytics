@@ -2,25 +2,41 @@
 
 don't be creepy. 
 
-## Setup
+## Quick start
 
 ```sh
-git clone https://github.com/12joan/not-analytics
-cd not-analytics
-vim app.rb # <-- Don't forget to use your own app ID
-mkdir -p db/
-rackup -o 0.0.0.0 -p PORT
+git clone https://github.com/12joan/not-analytics.git &&
+cd not-analytics &&
+bundle install &&
+echo &&
+echo "Your app id is..." &&
+cat /dev/urandom | tr -dc 'a-f0-9' | fold -w 32 | head -n 1 | tee conf/apps && # <-- Generate a random app id
+echo &&
+rm db/.deleteme &&
+rackup --host 0.0.0.0 -p 8080
 ```
 
-Use your own app ID (any randomly generated string) for the hash in `App#app_id_valid?`
+`conf/apps` should contain a list of allowed app ids, one per line.
 
-```ruby
-def app_id_valid?
-  { "14b6a51577c125505e0524226783c895" => true }.fetch(app_id, false)
-end
+## Docker
+
 ```
-
-**Warning:** Having `app_id_valid?` return true for arbitrary user input introduces a security vulnerability. See `db_path` to understand why. 
+git clone https://github.com/12joan/not-analytics.git &&
+docker build --tag not-analytics not-analytics &&
+mkdir -p $HOME/not-analytics/{db,conf} &&
+echo &&
+echo "Your app id is..." &&
+cat /dev/urandom | tr -dc 'a-f0-9' | fold -w 32 | head -n 1 | tee $HOME/not-analytics/conf/apps && # <-- Generate a random app id
+echo &&
+docker run \
+	--rm \
+	-d \
+	-p 8080:8080 \
+	-v $HOME/not-analytics/db:/code/db \
+	-v $HOME/not-analytics/conf:/code/conf \
+	--name not-analytics \
+	not-analytics
+```
 
 ## Recording hits
 
