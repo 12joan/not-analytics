@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rack (2.2.3)
+    yaml (0.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rack
+  yaml
+
+BUNDLED WITH
+   2.1.4
