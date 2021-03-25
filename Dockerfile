@@ -1,9 +1,18 @@
-FROM ruby:2.7.1
+FROM ruby:3.0.0-alpine
+
+RUN apk add --update --no-cache bash build-base tzdata postgresql-dev git
 
 WORKDIR /code
-COPY . /code
+
+COPY Gemfile Gemfile.lock /code/
 RUN bundle install
 
-EXPOSE 8080
+COPY . /code/
 
-CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "8080"]
+COPY docker/entrypoint-web.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint-web.sh
+ENTRYPOINT ["entrypoint-web.sh"]
+
+EXPOSE 3000
+
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", "3000"]
