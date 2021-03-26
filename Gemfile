@@ -21,7 +21,7 @@ gem 'puma', '~> 5.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 gem 'not_analytics_client', '~> 0.2.0', github: '12joan/not-analytics-client', branch: 'main'
 

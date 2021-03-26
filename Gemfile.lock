@@ -71,6 +71,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails-dom-testing (2.0.3)
@@ -110,6 +112,7 @@ DEPENDENCIES
   not_analytics_client (~> 0.2.0)!
   pg (~> 1.1)
   puma (~> 5.0)
+  rack-cors
   railties
   tzinfo-data
 
