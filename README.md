@@ -85,3 +85,52 @@ curl \
     }
   }'
 ```
+
+## Reading hit data
+
+In order to read hit data using the JSON API, your App must have a `read_token`.
+
+```ruby
+SecureRandom.hex.tap do |read_token|
+  my_app.update(read_token: read_token)
+end
+# => "b304226509dc998ba0c82b5b1bc49a5d"
+```
+
+You can then use this token in requests to `/apps/:app_id` and `apps/:app_id/hits` as follows.
+
+App data
+
+```bash
+curl \
+  -X GET \
+  https://hit.example.com/apps/87f7ac80212a68dd80ae3ad3341fda42 \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "token": "b304226509dc998ba0c82b5b1bc49a5d"
+  }'
+```
+
+Hit data
+
+```bash
+curl \
+  -X GET \
+  https://hit.example.com/apps/87f7ac80212a68dd80ae3ad3341fda42/hits \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "token": "b304226509dc998ba0c82b5b1bc49a5d",
+    "start_date": "2020-09-01",
+    "end_date": "2020-09-31",
+    "period": "day"
+  }'
+```
+
+The time period can be any one of:
+
+- hour
+- day
+- week
+- month
+- quarter
+- year
