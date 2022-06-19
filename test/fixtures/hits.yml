@@ -1,0 +1,5 @@
+six_am_normal_hits:
+  app_id: 87f7ac80212a68dd80ae3ad3341fda42
+  event: 'normal-hit'
+  time: <%= Time.zone.local(2022, 1, 1, 6, 0, 0) %>
+  count: 5
