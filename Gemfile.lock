@@ -45,7 +45,7 @@ GEM
     ffi (1.15.5)
     groupdate (5.2.4)
       activesupport (>= 5)
-    i18n (1.11.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     ipaddr (1.2.4)
     json (2.6.2)
