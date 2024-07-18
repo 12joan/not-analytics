@@ -11,9 +11,6 @@ jobs:
 
     - run: docker-compose pull
 
-    - uses: satackey/action-docker-layer-caching@v0.0.11
-      continue-on-error: true
-
     - run: docker-compose -f docker-compose.test.yml build
 
     - run: docker-compose -f docker-compose.test.yml run web sh -c 'rails db:setup && rails test'
@@ -25,9 +22,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - uses: satackey/action-docker-layer-caching@v0.0.11
-      continue-on-error: true
 
     - uses: zenato/docker-action@master
       with:
