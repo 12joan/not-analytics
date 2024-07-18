@@ -1,14 +1,14 @@
 GIT
   remote: https://github.com/12joan/not-analytics-client.git
-  revision: ada3d03a91b5c5f601ee39c6ab6116d7d1a6c851
+  revision: 2906a7d9f6fe35b4917f03356f70c2ac82a91eb0
   branch: main
   specs:
-    not_analytics_client (0.2.0)
-      base64 (~> 0.1)
-      json (~> 2.5)
-      net-http (~> 0.1.1)
-      openssl (~> 2.2)
-      securerandom (~> 0.1)
+    not_analytics_client (0.3.0)
+      base64 (~> 0.2)
+      json (~> 2.7)
+      net-http (~> 0.4)
+      openssl (~> 3.2)
+      securerandom (~> 0.3)
 
 GEM
   remote: https://rubygems.org/
@@ -62,7 +62,6 @@ GEM
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
-    ipaddr (1.2.6)
     irb (1.14.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
@@ -75,11 +74,8 @@ GEM
       nokogiri (>= 1.12.0)
     minitest (5.24.1)
     mutex_m (0.2.0)
-    net-http (0.1.1)
-      net-protocol
+    net-http (0.4.1)
       uri
-    net-protocol (0.2.2)
-      timeout
     nio4r (2.7.3)
     nokogiri (1.16.6-aarch64-linux)
       racc (~> 1.4)
@@ -87,8 +83,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.6-x86_64-linux)
       racc (~> 1.4)
-    openssl (2.2.3)
-      ipaddr
+    openssl (3.2.0)
     pg (1.5.6)
     psych (5.1.2)
       stringio
@@ -152,7 +147,7 @@ DEPENDENCIES
   byebug
   groupdate (~> 5.2)
   listen (~> 3.3)
-  not_analytics_client (~> 0.2.0)!
+  not_analytics_client (~> 0.3.0)!
   pg (~> 1.1)
   puma (~> 6.4)
   rack-cors
@@ -160,7 +155,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.0.7
+   ruby 3.3.4p94
 
 BUNDLED WITH
-   2.2.33
+   2.5.15
