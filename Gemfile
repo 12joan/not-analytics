@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.7'
+ruby '3.3.4'
 
 # Rails
 gem 'activesupport'
@@ -23,7 +23,7 @@ gem 'puma', '~> 6.4'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
-gem 'not_analytics_client', '~> 0.2.0', github: '12joan/not-analytics-client', branch: 'main'
+gem 'not_analytics_client', '~> 0.3.0', github: '12joan/not-analytics-client', branch: 'main'
 
 gem 'groupdate', '~> 5.2'
 
