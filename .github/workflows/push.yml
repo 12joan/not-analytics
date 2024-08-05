@@ -9,11 +9,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: docker-compose pull
+    - run: docker compose pull
 
-    - run: docker-compose -f docker-compose.test.yml build
+    - run: docker compose -f docker-compose.test.yml build
 
-    - run: docker-compose -f docker-compose.test.yml run web sh -c 'rails db:setup && rails test'
+    - run: docker compose -f docker-compose.test.yml run web sh -c 'rails db:setup && rails test'
 
   deploy_production:
     needs: test
