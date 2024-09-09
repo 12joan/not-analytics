@@ -86,7 +86,7 @@ GEM
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
     openssl (3.2.0)
-    pg (1.5.7)
+    pg (1.5.8)
     psych (5.1.2)
       stringio
     puma (6.4.2)
@@ -123,7 +123,7 @@ GEM
       ffi (~> 1.0)
     rdoc (6.7.0)
       psych (>= 4.0.0)
-    reline (0.5.9)
+    reline (0.5.10)
       io-console (~> 0.5)
     securerandom (0.3.1)
     stringio (3.1.1)
@@ -134,7 +134,7 @@ GEM
     uri (0.13.1)
     useragent (0.16.10)
     webrick (1.8.1)
-    zeitwerk (2.6.17)
+    zeitwerk (2.6.18)
 
 PLATFORMS
   aarch64-linux-musl
