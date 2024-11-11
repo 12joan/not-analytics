@@ -61,8 +61,8 @@ GEM
     ffi (1.17.0-aarch64-linux-musl)
     ffi (1.17.0-arm64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
-    groupdate (5.2.4)
-      activesupport (>= 5)
+    groupdate (6.5.1)
+      activesupport (>= 7)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
@@ -148,7 +148,7 @@ DEPENDENCIES
   activerecord
   activesupport
   byebug
-  groupdate (~> 5.2)
+  groupdate (~> 6.5)
   listen (~> 3.3)
   not_analytics_client (~> 0.3.0)!
   pg (~> 1.1)
