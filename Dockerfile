@@ -1,6 +1,6 @@
-FROM ruby:3.3.6-alpine
+FROM ruby:3.3.7-alpine
 
-RUN apk add --update --no-cache bash build-base tzdata postgresql-dev git gcompat
+RUN apk add --update --no-cache bash build-base tzdata postgresql-dev git gcompat yaml yaml-dev
 
 WORKDIR /code
 
