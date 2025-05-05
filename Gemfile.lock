@@ -54,7 +54,7 @@ GEM
     builder (3.3.0)
     byebug (12.0.0)
     concurrent-ruby (1.3.5)
-    connection_pool (2.5.2)
+    connection_pool (2.5.3)
     crass (1.0.6)
     date (3.4.1)
     drb (2.2.1)
@@ -62,8 +62,8 @@ GEM
     ffi (1.17.2-aarch64-linux-musl)
     ffi (1.17.2-arm64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
-    groupdate (6.5.1)
-      activesupport (>= 7)
+    groupdate (6.6.0)
+      activesupport (>= 7.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.8.0)
@@ -94,7 +94,7 @@ GEM
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
-    psych (5.2.3)
+    psych (5.2.4)
       date
       stringio
     puma (6.6.0)
