@@ -1,4 +1,4 @@
-FROM ruby:3.3.9-alpine
+FROM ruby:3.3.10-alpine
 
 RUN apk add --update --no-cache bash build-base tzdata postgresql-dev git gcompat yaml yaml-dev
 
