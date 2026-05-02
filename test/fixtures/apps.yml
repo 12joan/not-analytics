@@ -2,3 +2,9 @@ test_app:
   id: 87f7ac80212a68dd80ae3ad3341fda42
   read_token: b304226509dc998ba0c82b5b1bc49a5d
   name: 'Test App'
+
+test_app_with_key:
+  id: fce6685219b49d434eb9ac539d98c312
+  read_token: b304226509dc998ba0c82b5b1bc49a5d
+  key: aIT90JS5/wA2m8fBVDqHCH0ajNWgkUelFceaNNr1D3g=
+  name: 'Test App With Key'

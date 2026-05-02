@@ -2,11 +2,10 @@ services:
   web:
     build: .
     environment:
+      RAILS_ENV: production
       DATABASE_URL: postgres://postgres@db
     ports:
       - 3000:3000
-    volumes:
-      - .:/app
     depends_on:
       - db
 

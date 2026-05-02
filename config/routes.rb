@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post '/', to: 'hits#create'
   get '/apps/:id', to: 'apps#show'
   get '/apps/:id/hits', to: 'hits#index'
+  get '/healthcheck', to: 'application#healthcheck'
 end

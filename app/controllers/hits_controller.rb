@@ -14,14 +14,44 @@ class HitsController < ApplicationController
     app = App.find(hit_params[:app_id])
 
     if app.key.present?
-      # Verify signature
-      expected = NotAnalyticsClient::MessageEncryptor.new(app.key).decrypt_and_verify(
-        hit_params[:signature],
-        iv: hit_params[:iv],
-        auth_tag: hit_params[:auth_tag],
-      )
+      signature = hit_params[:signature]
+      iv = hit_params[:iv]
+      auth_tag = hit_params[:auth_tag]
+      nonce = hit_params[:nonce]
 
-      actual = "#{hit_params[:nonce]}:#{hit_params[:event]}"
+      unless signature
+        render json: { ok: false, error: 'Missing signature' }
+        return
+      end
+
+      unless iv
+        render json: { ok: false, error: 'Missing iv' }
+        return
+      end
+
+      unless auth_tag
+        render json: { ok: false, error: 'Missing auth_tag' }
+        return
+      end
+
+      unless nonce
+        render json: { ok: false, error: 'Missing nonce' }
+        return
+      end
+
+      # Verify signature
+      begin
+        expected = NotAnalyticsClient::MessageEncryptor.new(app.key).decrypt_and_verify(
+          signature,
+          iv: iv,
+          auth_tag: auth_tag,
+        )
+      rescue OpenSSL::Cipher::CipherError
+        render json: { ok: false, error: 'Invalid signature' }
+        return
+      end
+
+      actual = "#{nonce}:#{hit_params[:event]}"
 
       unless expected == actual
         render json: { ok: false, error: 'Invalid signature' }
@@ -29,7 +59,7 @@ class HitsController < ApplicationController
       end
 
       # Verify nonce
-      unless Nonce.remember(hit_params[:nonce])
+      unless Nonce.remember(nonce)
         render json: { ok: false, error: 'Invalid nonce' }
         return
       end
