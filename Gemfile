@@ -11,6 +11,8 @@ gem 'activemodel', '~> 8.1'
 gem 'activerecord', '~> 8.1'
 gem 'railties', '~> 8.1'
 
+gem 'tzinfo-data', '~> 1.2026'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 

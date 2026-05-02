@@ -154,6 +154,8 @@ GEM
     tsort (0.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2026.2)
+      tzinfo (>= 1.0.0)
     uri (1.1.1)
     useragent (0.16.11)
     zeitwerk (2.7.5)
@@ -178,6 +180,7 @@ DEPENDENCIES
   puma (~> 6.4)
   rack-cors (~> 3.0)
   railties (~> 8.1)
+  tzinfo-data (~> 1.2026)
 
 RUBY VERSION
   ruby 4.0.2p0
