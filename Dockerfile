@@ -1,6 +1,6 @@
 FROM ruby:4.0.2-alpine
 
-RUN apk add --update --no-cache build-base tzdata postgresql-dev git gcompat yaml yaml-dev musl-dev libffi-dev
+RUN apk add --update --no-cache build-base tzdata postgresql-dev git gcompat yaml yaml-dev musl-dev libffi-dev curl
 
 WORKDIR /app
 
