@@ -19,4 +19,4 @@ ENV RAILS_ENV=production
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", "3000"]
 
 HEALTHCHECK --start-period=1s --start-interval=1s \
-  CMD curl -f http://localhost/healthcheck || exit 1
+  CMD curl -f http://localhost:3000/healthcheck || exit 1
