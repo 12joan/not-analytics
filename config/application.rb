@@ -40,5 +40,9 @@ module NotAnalytics
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # We don't depend on secret_key_base, but Rails needs it to be present
+    # anyway. Set it to a random value every time the app launches.
+    config.secret_key_base = SecureRandom.hex(64)
   end
 end
