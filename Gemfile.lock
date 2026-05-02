@@ -61,6 +61,7 @@ GEM
     ffi (1.17.4-aarch64-linux-musl)
     ffi (1.17.4-arm64-darwin)
     ffi (1.17.4-x86_64-linux-gnu)
+    ffi (1.17.4-x86_64-linux-musl)
     groupdate (6.8.0)
       activesupport (>= 7.2)
     i18n (1.14.8)
@@ -92,10 +93,13 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.3-x86_64-linux-gnu)
       racc (~> 1.4)
+    nokogiri (1.19.3-x86_64-linux-musl)
+      racc (~> 1.4)
     openssl (3.3.2)
     pg (1.6.3-aarch64-linux-musl)
     pg (1.6.3-arm64-darwin)
     pg (1.6.3-x86_64-linux)
+    pg (1.6.3-x86_64-linux-musl)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -159,6 +163,7 @@ PLATFORMS
   arm64-darwin-22
   arm64-darwin-25
   x86_64-linux
+  x86_64-linux-musl
 
 DEPENDENCIES
   actionpack (~> 8.1)
