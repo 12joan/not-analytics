@@ -41,15 +41,8 @@ module NotAnalytics
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.middleware.insert_before 0, Rack::Cors do
-      allow do
-        origins '*'
-        resource(
-          '*',
-          headers: :any,
-          methods: [:get, :patch, :put, :delete, :post, :options]
-        )
-      end
-    end
+    # We don't depend on secret_key_base, but Rails needs it to be present
+    # anyway. Set it to a random value every time the app launches.
+    config.secret_key_base = SecureRandom.hex(64)
   end
 end

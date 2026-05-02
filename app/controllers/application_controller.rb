@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::API
+  # GET /healthcheck
+  def healthcheck
+    render plain: 'OK'
+  end
+
   private
 
   def set_app_with_read_token

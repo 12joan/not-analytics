@@ -4,12 +4,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '4.0.2'
 
 # Rails
-gem 'activesupport'
-gem 'actionpack'
-gem 'actionview'
-gem 'activemodel'
-gem 'activerecord'
-gem 'railties'
+gem 'activesupport', '~> 8.1'
+gem 'actionpack', '~> 8.1'
+gem 'actionview', '~> 8.1'
+gem 'activemodel', '~> 8.1'
+gem 'activerecord', '~> 8.1'
+gem 'railties', '~> 8.1'
+
+gem 'tzinfo-data', '~> 1.2026'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -17,24 +19,15 @@ gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 6.4'
 
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem 'rack-cors'
+gem 'rack-cors', '~> 3.0'
 
-gem 'not_analytics_client', '~> 0.3.0', github: '12joan/not-analytics-client', branch: 'main'
+gem 'not_analytics_client', '~> 0.3.0',
+  github: '12joan/not-analytics-client',
+  branch: 'main'
 
 gem 'groupdate', '~> 6.5'
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
 
 group :development do
   gem 'listen', '~> 3.3'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
