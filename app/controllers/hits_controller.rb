@@ -49,7 +49,7 @@ class HitsController < ApplicationController
     start_date = params[:start_date]&.then { DateTime.parse _1 }
     end_date = params[:end_date]&.then { DateTime.parse _1 }
 
-    hit_scope = @app.hits.where(time: start_date..end_date)
+     hit_scope = @app.hits.where(time: start_date..end_date)
 
     events = hit_scope.distinct.pluck(:event)
 
