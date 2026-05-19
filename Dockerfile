@@ -1,4 +1,4 @@
-FROM ruby:4.0.2-alpine
+FROM ruby:4.0.4-alpine
 
 RUN apk add --update --no-cache build-base postgresql-dev git yaml-dev musl-dev libffi-dev curl
 
