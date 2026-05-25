@@ -158,7 +158,7 @@ GEM
       tzinfo (>= 1.0.0)
     uri (1.1.1)
     useragent (0.16.11)
-    zeitwerk (2.7.5)
+    zeitwerk (2.8.2)
 
 PLATFORMS
   aarch64-linux-musl
