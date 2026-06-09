@@ -17,7 +17,7 @@ gem 'tzinfo-data', '~> 1.2026'
 gem 'pg', '~> 1.1'
 
 # Use Puma as the app server
-gem 'puma', '~> 6.4'
+gem 'puma', '~> 8.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', '~> 3.0'
