@@ -107,7 +107,7 @@ GEM
     psych (5.4.0)
       date
       stringio
-    puma (6.6.1)
+    puma (8.0.2)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.6)
@@ -177,7 +177,7 @@ DEPENDENCIES
   listen (~> 3.3)
   not_analytics_client (~> 0.3.0)!
   pg (~> 1.1)
-  puma (~> 6.4)
+  puma (~> 8.0)
   rack-cors (~> 3.0)
   railties (~> 8.1)
   tzinfo-data (~> 1.2026)
